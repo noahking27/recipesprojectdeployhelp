@@ -17,8 +17,8 @@ module.exports = {
   production: {
     username: 'root',
     password: process.env.DB_PASS,
-    database: 'recipes_db',
-    host: '127.0.0.1',
+    database: 'ngjvdsi09iv1ytwm',
+    host: 'qf5dic2wzyjf1x5x.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
     dialect: 'mysql'
   }
 };
