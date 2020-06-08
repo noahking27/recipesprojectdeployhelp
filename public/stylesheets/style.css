@@ -1,0 +1,82 @@
+.content {
+  margin-bottom: 50px;
+}
+
+.align-right {
+  float: right;
+}
+
+form.signup,
+form.login {
+  margin-top: 50px;
+}
+
+.card {
+  height: 575px;
+  width: 100%;
+}
+
+.navbar-header {
+  width: 100%;
+}
+
+.navbar-brand.link {
+  width: 159px;
+  float: right;
+}
+
+#vegetarian {
+  display: none;
+}
+
+#vegan {
+  display: none;
+}
+
+#very_healthy {
+  display: none;
+}
+
+#cuisines {
+  display: none;
+}
+
+#recipe-image {
+  display: none;
+  margin-top: 30px;
+  float: right;
+}
+
+#recipe-ingredients {
+  display: none;
+}
+
+#diets {
+  display: none;
+}
+
+.ingredient-item {
+  height: 200px;
+  width: 150px;
+  margin: 0 auto;
+}
+
+.ingredient-item p {
+  text-align: center;
+}
+
+#recipe-description {
+  display: none;
+}
+
+#nutrients-table table {
+  width: 100%;
+}
+
+#source-name {
+  display: none;
+}
+
+.start-cooking {
+  float: right;
+}

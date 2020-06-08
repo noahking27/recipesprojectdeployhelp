@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Recipe Details</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+  <link href="../stylesheets/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/logout">
+          Logout
+        </a>
+        <a class="navbar-brand link" href="/advanced-search">
+          Advanced Search
+        </a>
+        <a class="navbar-brand link" href="/members">
+          My Recipes
+        </a>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <div class="content">
+      <div class="row">  
+        <div class="col-md-12">
+          <button type="button" class="btn btn-primary my-1 previous">Go Back</button>
+          <button type="submit" class="btn btn-primary my-1 start-cooking">Start Cooking</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-5 col-sm-12">
+          <h1 id="recipe-title"></h1>
+          <p><label id="vegetarian">Vegetarian</label><label id="vegan">, Vegan</label>
+          </p>
+          <label><b>Prep Time:</b> <span id="prep-time"></span> minutes | </label>
+          <label><b>Servings:</b> <span id="servings"></span></label>
+          <label id="very-healthy">| Healthy Option</label>
+          <div id="cuisines">
+            <h4>Cuisines:</h4>
+            <ul id="cuisines-list">
+            </ul>
+          </div>
+          <div id="recipe-description">
+            <h4>Description:</h4>
+          </div>
+          <div id="diets">
+            <h4>Diets:</h4>
+            <ul id="diets-list">
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-7 col-sm-12">
+          <div id="recipe-image">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div id="recipe-ingredients">
+            <h4>Ingredients:</h4>
+            <div id="ingredients-list" class="row">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div id="nutrition-table" class="col-md-12">
+          <table class="table table-bordered table-striped table-hover">
+            <thead>
+              <tr>
+                <th>Nutrient</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+            <p><a href="#" id="source-name" target="_blank"></a></p>
+        </div>
+      </div>
+      <div class="row">  
+        <div class="col-md-12">
+          <button type="button" class="btn btn-primary my-1 previous">Go Back</button>
+          <button type="submit" class="btn btn-primary my-1 start-cooking">Start Cooking</button>
+        </div>
+      </div><!-- end row -->
+    </div><!-- end content -->
+      
+  </div><!-- end container-fluid -->
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="../js/details.js"></script>
+
+</body>
+
+</html>

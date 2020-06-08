@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Recipe Book</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+  <link href="stylesheets/style.css" rel="stylesheet">
+</head>
+
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/logout">
+        Logout
+      </a>
+      <a class="navbar-brand link" href="/advanced-search">
+        Advanced Search
+      </a>
+      <a class="navbar-brand link" href="/members">
+        My Recipes
+      </a>
+    </div>
+  </div>
+</nav>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-9">
+        <h1>Welcome<span class="member-name"></span></h1>
+      </div>
+      <div class="col-sm-3">
+        <form id="global-search" class="form-inline">
+          <input id="search-query" class="form-control mb-2 mr-sm-2" placeholder="Search Recipes">        
+          <button type="submit" class="btn btn-primary my-1">Search</button>
+        </form>
+        <div style="display: none" id="search-error-alert" class="alert alert-danger" role="alert">
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+          <span class="sr-only">Error:</span> <span id="search-error-msg"></span>
+        </div>
+      </div>   
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div id="content-container">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/members.js"></script>
+
+</body>
+
+</html>

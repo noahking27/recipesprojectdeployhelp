@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+    <link href="stylesheets/style.css" rel="stylesheet">
+    <link href="stylesheets/advanced-search.css" rel="stylesheet">
+    <title>Recipe Advanced Search</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/logout">
+                    Logout
+                </a>
+                <a class="navbar-brand link" href="/advanced-search">
+                    Advanced Search
+                </a>
+                <a class="navbar-brand link" href="/members">
+                    My Recipes
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <!--Header-->
+        <div class="row text-center">
+            <div class="col">
+                <h3>Adanced Search</h3>
+            </div>
+        </div>
+
+        <!--Search options-->
+        <form id="advanced-search">
+
+            <!--Query string-->
+            <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Dish:</label>
+                <div class="col-sm-10">
+                    <input class="form-control" id="dish">
+                    <div style="display: none" id="search-error-alert" class="alert alert-danger" role="alert">
+                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                        <span class="sr-only">Error:</span> <span id="search-error-msg"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!--Cuisine-->
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Cuisine:</label>
+                <div class="col-sm-10">
+                    <select id="cuisine" class="form-control">
+                        <option value="">Any</option>
+                        <option value="African">African</option>
+                        <option value="American">American</option>
+                        <option value="British">British</option>
+                        <option value="Cajun">Cajun</option>
+                        <option value="Caribbean">Caribbean</option>
+                        <option value="Chinese">Chinese</option>
+                        <option value="Eastern European">Eastern European</option>
+                        <option value="European">European</option>
+                        <option value="French">French</option>
+                        <option value="German">German</option>
+                        <option value="Greek">Greek</option>
+                        <option value="Indian">Indian</option>
+                        <option value="Irish">Irish</option>
+                        <option value="Italian">Italian</option>
+                        <option value="Japanese">Japanese</option>
+                        <option value="Jewish">Jewish</option>
+                        <option value="Korean">Korean</option>
+                        <option value="Latin American">Latin American</option>
+                        <option value="Mediterranean">Mediterranean</option>
+                        <option value="Mexican">Mexican</option>
+                        <option value="Middle Eastern">Middle Eastern</option>
+                        <option value="Nordic">Nordic</option>
+                        <option value="Southern">Southern</option>
+                        <option value="Spanish">Spanish</option>
+                        <option value="Thai">Thai</option>
+                        <option value="Vietnamese">Vietnamese</option>
+                    </select>
+                </div>
+            </div>
+
+            <!--Prep time-->
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">
+                    Prep Time: <br>
+                    <span class="units">(minutes)</span>
+                </label>
+                <div class="col-sm-10">
+                    <select id="prep-time" class="form-control">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                        <option value="40">40</option>
+                        <option value="50">50</option>
+                        <option value="60">60</option>
+                        <option value="70">70</option>
+                        <option value="80">80</option>
+                        <option value="90">90</option>
+                        <option value="100" selected>100</option>
+                    </select>
+                </div>
+            </div>
+
+            <!--Max calories-->
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Max Calories:</label>
+                <div class="col-sm-10">
+                    <div class="slidecontainer">
+                        <span id="cal-output"></span>
+                        <input type="range" min="0" max="2000" value="1000" class="slider" id="cal-range">
+                    </div>
+                </div>
+            </div>
+
+            <!--Max carbs-->
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Max Carbs:</label>
+                <div class="col-sm-10">
+                    <div class="slidecontainer">
+                        <span id="carb-output"></span> g
+                        <input type="range" min="0" max="1000" value="500" class="slider" id="carb-range">
+                    </div>
+                </div>
+            </div>
+
+            <!--Max fat-->
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Max Fat:</label>
+                <div class="col-sm-10">
+                    <div class="slidecontainer">
+                        <span id="fat-output"></span> g
+                        <input type="range" min="0" max="100" value="50" class="slider" id="fat-range">
+                    </div>
+                </div>
+            </div>
+
+            <!--Sodium-->
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Max Sodium:</label>
+                <div class="col-sm-10">
+                    <input type="number" value="500" min="0" max="800" id="sodium"> mg
+                </div>
+            </div>
+
+            <!--Sugar-->
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Max Sugar:</label>
+                <div class="col-sm-10">
+                    <input type="number" value="50" min="0" max="300" id="sugar"> mg
+                </div>
+            </div>
+
+            <!--Diet-->
+            <fieldset class="form-group row">
+                <label class="col-sm-2 col-form-label">Diet:</label>
+                <div class="col-sm-10">
+                    <input class="diet-input" type="radio" name="diet" value="">
+                    <label class="form-check-label" for="diet">
+                        None
+                    </label>
+
+                    <input class="diet-input" type="radio" name="diet" value="Ketogenic">
+                    <label class="form-check-label" for="diet">
+                        Ketogenic
+                    </label>
+
+                    <input class="diet-input" type="radio" name="diet" value="Vegetarian">
+                    <label class="form-check-label" for="diet">
+                        Vegetarian
+                    </label>
+
+                    <input class="diet-input" type="radio" name="diet" value="Vegan">
+                    <label class="form-check-label" for="diet">
+                        Vegan
+                    </label>
+
+                    <input class="diet-input" type="radio" name="diet" value="Pescetarian">
+                    <label class="form-check-label" for="diet">
+                        Pescetarian
+                    </label>
+
+                    <input class="diet-input" type="radio" name="diet" value="Paleo">
+                    <label class="form-check-label" for="diet">
+                        Paleo
+                    </label>
+                </div>
+            </fieldset>
+
+            <!--Intolerances-->
+            <div class="form-group row">
+                <div class="col-sm-2">Intolerances:</div>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="allergy" value="dairy">
+                        <label class="form-check-label" for="allergy">
+                            Dairy
+                        </label>
+                        <input class="form-check-input" type="checkbox" name="allergy" value="gluten">
+                        <label class="form-check-label" for="allergy">
+                            Gluten
+                        </label>
+                        <input class="form-check-input" type="checkbox" name="allergy" value="peanut">
+                        <label class="form-check-label" for="allergy">
+                            Peanut
+                        </label>
+                        <input class="form-check-input" type="checkbox" name="allergy" value="shellfish">
+                        <label class="form-check-label" for="allergy">
+                            Shellfish
+                        </label>
+                        <input class="form-check-input" type="checkbox" name="allergy" value="soy">
+                        <label class="form-check-label" for="allergy">
+                            Soy
+                        </label>
+                        <input class="form-check-input" type="checkbox" name="allergy" value="treenut">
+                        <label class="form-check-label" for="allergy">
+                            Tree Nut
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!--Search Button-->
+            <div class="row text-center">
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary align-right">Search</button>
+                </div>
+            </div>
+
+        </form>
+
+        <!--Search results-->
+        <div class="row">
+            <div class="col-12">
+                <h3 id="no-recipes"></h3>
+                <div id="advanced-search-results"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <script src="./js/advanced-search.js"></script>
+</body>
+
+</html>

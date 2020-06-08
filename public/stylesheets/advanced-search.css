@@ -1,0 +1,33 @@
+h3 {
+    margin: 10px;
+}
+
+body {
+    display: block;
+    text-align: center;
+}
+
+form {
+    margin: 30px;
+    width: 70%;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+#no-recipes {
+    text-align: center;
+}
+
+#carb-range {
+    background-color: #158cba;
+}
+
+#advanced-search-results {
+    text-align: left;
+}
+
+.units {
+    font-size: 9pt;
+}
